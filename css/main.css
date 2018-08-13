@@ -23,14 +23,14 @@ a:hover {
 	text-decoration: underline;
 }
 
-.content {
+.container {
 	position: relative;
 	max-width: 800px;
 	height: 100%;
 	margin: 0 auto;
 }
 
-.col-left {
+.menu-desktop {
 	position: relative;
 	display: block;
 	float: left;
@@ -38,27 +38,35 @@ a:hover {
 	height: 100%;
 }
 
-.col-right {
+.menu-mobile {
+	display: none;
+	margin-top: 60px;
+	margin-bottom: 60px;
+}
+
+.content {
 	position: relative;
 	display: block;
 	float: right;
-	width: 580px;
+	max-width: 580px;
+	padding-top: 170px;
 }
 
+.footer {
+	overflow: auto;
+}
 
 /* 
 * 
-* @todo: Responsive layout
+* Responsive layout
 *
 */
 
-.mobile {
-	display: none;
-}
-
-@media (max-width: 981px) {
-	.desktop { display: none; }
-	.mobile { display: block; }
+@media (max-width: 840px) {
+	.menu-desktop { display: none; }
+	.menu-mobile { display: block; }
+	.content { float: left; padding-top: 0px; }
+	.container { padding: 15px; max-width: 580px; margin: 0 auto; }
 }
 
 
@@ -69,9 +77,13 @@ a:hover {
 */
 
 blockquote {
-	border-color: #d2d2d2!important;
+	padding-left: 10px;
+	border-left: 4px solid #d2d2d2;
 	font-size: 12px;
 	font-style: italic;
+	margin-left: 15px;
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 
 hr {
@@ -103,25 +115,19 @@ hr {
 
 .resp-sharing-button__link,
 .resp-sharing-button__icon {
-	display: inline-block
-}
-
-.resp-sharing-button__link {
-	text-decoration: none;
-	color: #fff;
+	display: inline-block;
 }
 
 .resp-sharing-button {
 	border-radius: 3px;
 	transition: 25ms ease-out;
-	padding-top:2px;
-	padding-bottom:4px;
+	padding-top:4px;
+	padding-bottom:1px;
 	padding-right:2px;
 	padding-left:5px;
 	width: 20px;
 	height: 16px;
 	display: inline-block;
-	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
 	position: absolute;
 	margin-left:6px;
 }
@@ -136,88 +142,61 @@ hr {
 	margin-left:34px;
 }
 
-.sharing-buttons {
-	float: right; margin-top: 8px;
-}
-
-@media (max-width: 981px) {
-	.sharing-buttons{float:left;margin-top: 25px; clear:both;}
-}
-
-.resp-sharing-count:focus, .resp-sharing-count:hover {
-	color:#4183C4;
-}
-
 .resp-sharing-button__icon svg {
-  width: 1em;
-  height: 1em
-}
-
-.resp-sharing-button span {
-  padding-left: 0.4em
-}
-
-/* Non solid icons get a stroke */
-.resp-sharing-button__icon {
-  stroke: #fff;
-  fill: none
+	width: 15px;
+	height: 15px;
 }
 
 /* Solid icons get a fill */
 .resp-sharing-button__icon--solid,
 .resp-sharing-button__icon--solidcircle {
-  fill: #fff;
-  stroke: none
+	fill: #fff;
+	stroke: none
 }
 
 .resp-sharing-button--facebook {
-  background-color: #3b5998;
-  border-color: #3b5998;
+	background-color: #3b5998;
+	border-color: #3b5998;
 }
 
 .resp-sharing-button--facebook:hover,
 .resp-sharing-button--facebook:active {
-  background-color: #2d4373;
-  border-color: #2d4373;
+	background-color: #2d4373;
+	border-color: #2d4373;
 }
 
 .resp-sharing-button--twitter {
-  background-color: #55acee;
-  border-color: #55acee;
+	background-color: #55acee;
+	border-color: #55acee;
 }
 
 .resp-sharing-button--twitter:hover,
 .resp-sharing-button--twitter:active {
-  background-color: #2795e9;
-  border-color: #2795e9;
+	background-color: #2795e9;
+	border-color: #2795e9;
 }
 
 .resp-sharing-button--pinterest {
-  background-color: #bd081c;
-  border-color: #bd081c;
+	background-color: #bd081c;
+	border-color: #bd081c;
 }
 
 .resp-sharing-button--pinterest:hover,
 .resp-sharing-button--pinterest:active {
-  background-color: #8c0615;
-  border-color: #8c0615;
+	background-color: #8c0615;
+	border-color: #8c0615;
 }
 
-/* .resp-sharing-button--tumblr {
-  background-color: #35465C;
-  border-color: #35465C;
+.sharing-buttons {
+	float: right; margin-top: 8px;
 }
 
-.resp-sharing-button--tumblr:hover,
-.resp-sharing-button--tumblr:active {
-  background-color: #222d3c;
-  border-color: #222d3c;
+@media (max-width: 500px) {
+	.sharing-buttons {
+		clear:both;
+		float:left;
+		margin-left: -5px;
+		margin-bottom: 60px;
+		margin-top: -20px;
+	}
 }
-
-.resp-sharing-button--reddit {
-  background-color: #5f99cf
-}
-
-.resp-sharing-button--reddit:hover {
-  background-color: #3a80c1
-} */
